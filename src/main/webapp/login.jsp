@@ -4,6 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
 <title>login</title>
 </head>
 <body>
@@ -17,7 +20,7 @@
 			<input type="password" name="password" placeholder="password"><br>
 			<input type="button" value="login"><br>
 			<a>쭈히 안뇽</a><br>
-			<button>가입하기</button>
+			<button class="btn btn-primary">가입하기</button>
 		</fieldset>
 
 	</div>
