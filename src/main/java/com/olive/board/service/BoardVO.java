@@ -1,6 +1,7 @@
 package com.olive.board.service;
 
 public class BoardVO {
+
 	private String board_index;
 	private String board_id;
 	private String list_id;
@@ -65,7 +66,6 @@ public class BoardVO {
 	public void setArchive(String archive) {
 		this.archive = archive;
 	}
-	
 	@Override
 	public String toString() {
 		return "BoardVO [board_index=" + board_index + ", board_id=" + board_id + ", list_id=" + list_id + ", card_id="

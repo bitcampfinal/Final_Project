@@ -7,6 +7,7 @@ public class UserVO {
 	private String name;
 	private String image;
 	
+	
 	public String getUser_id() {
 		return user_id;
 	}
@@ -37,11 +38,11 @@ public class UserVO {
 	public void setImage(String image) {
 		this.image = image;
 	}
+	
 	@Override
 	public String toString() {
 		return "UserVO [user_id=" + user_id + ", email=" + email + ", password=" + password + ", name=" + name
 				+ ", image=" + image + "]";
 	}
-	
 	
 }

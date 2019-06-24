@@ -5,17 +5,18 @@ public class MemberVO {
 	private String user_id;
 	private String board_index;
 	private String admin;
+	
 	public String getUser_id() {
 		return user_id;
 	}
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
-	public String getBoard_index() {
+	public String getBoard_idx() {
 		return board_index;
 	}
-	public void setBoard_index(String board_index) {
-		this.board_index = board_index;
+	public void setBoard_idx(String board_idx) {
+		this.board_index = board_idx;
 	}
 	public String getAdmin() {
 		return admin;
@@ -23,11 +24,9 @@ public class MemberVO {
 	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
-	
 	@Override
 	public String toString() {
-		return "MemberVO [user_id=" + user_id + ", board_index=" + board_index + ", admin=" + admin + "]";
+		return "MemberVO [user_id=" + user_id + ", board_idx=" + board_index + ", admin=" + admin + "]";
 	}
-	
 	
 }
