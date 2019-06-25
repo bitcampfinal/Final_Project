@@ -13,11 +13,15 @@
 			<h4>모두 함께 작업을 해보아요~</h4>
 			<button>구글로 로그인하기</button><br>
 			<p>------또는------</p>
+			
+			<form action="login.do" method="post"
+			enctype="multipart/form-data">
 			<input type="text" name="id" placeholder="exaple@google.com"><br>
 			<input type="password" name="password" placeholder="password"><br>
 			<input type="button" value="login"><br>
 			<a>쭈히 안뇽</a><br>
-			<button>가입하기</button>
+			<input type="submit">가입하기
+			</form>
 		</fieldset>
 
 	</div>

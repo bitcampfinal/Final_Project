@@ -21,14 +21,9 @@ public class UserController {
 	
 	@RequestMapping(value="/login.do", method=RequestMethod.POST) 
 	public String login(UserVO vo,
-			HttpSession session) {//UserVO : Command 객체
+			HttpSession session) {
 		System.out.println(">> 로그인 처리");
 		System.out.println("전달받은 vo: " + vo);
-		
-		//예외처리를 위해 예외 발생 시키기
-		if(vo.getUser_id() == null || vo.getUser_id().equals("")) {
-			throw new IllegalArgumentException("아이디는 반드시 입력해야 합니다.");
-		}
 		
 		UserVO user = userService.getUser(vo);
 
@@ -36,20 +31,10 @@ public class UserController {
 			
 			session.setAttribute("user_id", user.getUser_id()); //세션에 유저아이디 저장 
 			
-			return ""; //여기 수정
+			return "main_board.jsp"; //로그인 후 메인 보드 페이지로 이동
 		} else { //사용자가 없는 경우
-			return "login.jsp";
+			return "login.jsp"; 
 		}
-	}
-	
-	@RequestMapping(value="/login.do", method=RequestMethod.GET) 
-	public String loginView(@ModelAttribute("user")UserVO vo) {
-		System.out.println(">> 로그인 화면으로 이동 - loginView()");
-		vo.setUser_id("test");
-		vo.setPassword("1234");
-		
-		return "login.jsp";
-		
 	}
 	
 	@RequestMapping("/logout.do") //로그아웃
@@ -65,7 +50,7 @@ public class UserController {
 		System.out.println(">>> 회원가입 - insertUser()");
 		
 		userService.insertUser(vo);
-		return "//보드 화면";
+		return "login.jsp";
 	}
 	
 	@RequestMapping("/updateUser.do") //회원 정보 수정
@@ -74,16 +59,16 @@ public class UserController {
 		System.out.println(">>> 회원정보 수정 - updateUser()");
 		
 		userService.updateUser(vo);
-		return "//보드 화면";
+		return "//마이페이지 페이지";
 	}
 	
-	@RequestMapping("/deleteUser.do") //회원 정보 수정
+	@RequestMapping("/deleteUser.do") //회원 탈퇴
 	public String deleteUser(UserVO vo) 
 			throws IllegalStateException, IOException {
 		System.out.println(">>> 회원 탈퇴 - deleteUser()");
 		
 		userService.deleteUser(vo);
-		return "//보드 화면";
+		return "login.jsp";
 	}
 	
 }
